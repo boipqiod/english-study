@@ -1,0 +1,646 @@
+researcher, 연구원
+company, 회사
+university, 대학교
+immigrant, 이민
+tend, 추세
+programme, 프로그램
+property, 재산
+structure, 구조
+vehicle, 차량
+signal, 신호
+almond, 아몬드
+chemical, 화학적인
+coalition, 연합
+opportunity, 기회
+carbon, 탄소
+strategy, 전략
+scientist, 과학자
+dam, 댐
+climate, 기후
+track, 길
+lizard, 도마뱀
+assessment, 평가
+starvation, 굶주림
+migrate, 이주하다
+basically, 원래
+economist, 경제학자
+phenomenon, 현상
+practise, 관행
+European, 유럽 ​​사람
+investor, 투자자
+organisation, 조직
+poverty, 빈곤
+perch, 퍼치
+landscape, 풍경
+further, 더 나아가
+Latino, 라틴계
+fund, 축적
+infect, 감염시키다
+unemployment, 실업
+conduct, 지휘하다
+temperature, 온도
+current, 현재의
+innovation, 혁신
+promotion, 홍보
+coral, 산호
+scale, 규모
+colleague, 동료
+switch, 스위치
+propose, 제안하다
+breed, 새끼를 낳다
+analyse, 분석하다
+illegal, 불법적인
+release, 풀어 주다
+mysterious, 신비한
+partial, 부분적인
+weld, 용접하다
+involve, 관련시키다
+integrate, 통합하다
+mistake, 실수
+construction, 건설
+temporary, 일시적인
+estimate, 추정
+electric, 전기 같은
+insurance, 보험
+identify, 식별하다
+package, 패키지
+astronomer, 천문학자
+radiation, 방사
+detect, 감지하다
+concept, 개념
+throughout, ~ 내내
+desirable, 바람직한
+account, 계정
+grain, 곡물
+indicate, 나타내다
+quality, 품질
+core, 핵심
+conference, 회의
+economy, 경제
+eventual, 어쩌면 일어날 수도 있는
+gallery, 갱도
+mode, 방법
+claim, 주장하다
+system, 체계
+collision, 충돌
+permanent, 영구적인
+powerful, 강한
+essential, 필수적인
+herd, 떼
+acoustics, 음향학
+criminology, 범죄학
+entrepreneur, 기업가
+agricultural, 농업
+electromagnetic, 전자기
+polar, 극선
+amongst, 사이에
+satellite, 위성
+significant, 중요한
+vernacular, 전문 용어
+definition, 정의
+journal, 신문
+firm, 단단한
+photograph, 사진
+repetition, 되풀이
+circulation, 순환
+totality, 전체
+backward, 뒤로
+electronic, 전자
+curious, 궁금한
+bulb, 구근
+environment, 환경
+debris, 부스러기
+conservation, 보존
+industrial, 산업의
+origin, 기원
+marine, 선박
+restrict, 얽매다
+optimistic, 낙관적인
+individual, 개인
+collide, 충돌하다
+disorder, 무질서
+contract, 계약
+luxury, 사치
+distinguish, 구별하다
+professor, 교수
+sequester, 격리자
+particular, 특정한
+promote, 홍보하다
+volume, 용량
+politics, 정치
+collection, 수집
+biology, 생물학
+eclipse, 식
+absolute, 순수한
+movement, 움직임
+executive, 경영진
+deficiency, 부족
+compute, 계산하다
+molecular, 분자
+regulation, 규제
+urgency, 긴급
+measure, 측정하다
+recorder, 기록계
+notion, 개념
+subscribe, 구독하다
+uncover, 폭로하다
+digital, 디지털
+financial, 재정적인
+telescope, 망원경
+transition, 이행
+sensitivity, 감광도
+hive, 하이브
+representative, 대표
+generation, 세대
+motivational, 동기 부여
+moonshot, 문샷
+advance, 전진
+float, 뜨다
+operation, 작업
+resource, 의지
+engineer, 엔지니어
+academic, 학생
+aurora, 오로라
+equity, 형평성
+assignment, 과제
+desirability, 바람직함
+feature, 특징
+benefit, 혜택
+experiment, 실험
+prove, 입증하다
+physician, 내과 의사
+abrupt, 험준한
+criticism, 비판
+respond, 대답하다
+complain, 불평하다
+plunge, 돌진
+judgement, 심판
+manuscript, 원고
+honour, 명예
+recognise, 인정하다
+pose, 포즈
+appetite, 식욕
+survival, 활착
+tropical, 열렬한
+contribute, 기여하다
+leftover, 나머지
+approve, 승인하다
+clamour, 외치다
+flick, 영화
+vampire, 흡혈귀
+carmaker, 자동차 제조사
+frequency, 빈도
+expansion, 확장
+feedback, 피드백
+district, 구역
+agriculture, 농업
+flexible, 유연한
+production, 생산
+engineering, 공학
+unashamed, 부끄러워하지 않는
+aesthetic, 미적인
+frontier, 국경 지방
+apparent, 명백한
+cluster, 무리
+vacuum, 비어 있는
+artefact, 인공물
+derivative, 유도체
+census, 인구 조사
+reproduce, 낳다
+symptom, 징후
+cruise, 순항
+software, 소프트웨어
+echo, 에코
+consider, 고려하다
+department, 부서
+impression, 인상
+trait, 특성
+thoughtful, 인정 있는
+pilgrim, 순례자
+cosmic, 질서 있는
+operational, 운영상의
+appendix, 충수
+situate, ...을 놓다
+cultural, 문화적
+puzzle, 퍼즐
+staircase, 계단
+productive, 생기게 하는
+forgive, 용서하다
+transcend, 초월하다
+archeologist, 고고학자
+colony, 식민지
+clump, 덩어리
+rhythmical, 리드미컬한
+preparation, 준비
+unweldable, 용접할 수 없는
+survive, 생존하다
+glimpse, 일견
+characterisation, 성격 묘사
+technique, 기술
+colloquial, 구어체
+sequence, 순서
+refine, 다듬다
+consideration, 고려 사항
+feather, 깃털
+biologist, 생물학자
+spinal, 척추
+fragile, 부서지기 쉬운
+foyer, 휴게실
+statistics, 통계
+compensate, 보상하다
+reimagine, 다시 상상하다
+drought, 가뭄
+discipline, 규율
+scarlet, 주홍
+predict, 예측하다
+pedal, 페달
+neuron, 뉴런
+toxic, 독성
+outward, 외부
+dramatic, 극적인
+reassess, 재평가하다
+spew, 내뿜다
+margin, 여유
+hub, 바퀴통
+explanation, 설명
+section, 부분
+bracket, 까치발
+cord, 코드
+fundamental, 근본적인
+archeology, 고고학
+encompass, 에워 싸다
+obstruct, 막다
+academy, 학원
+energetic, 정력적인
+appoint, 정하다
+foreshadow, 예표
+aeroplane, 비행기
+coverage, 적용 범위
+confidential, 비밀의
+deafen, 귀가 들리지 않게 하다
+awesome, 엄청난
+stressful, 스트레스가 많은
+narrowness, 좁음
+sacrifice, 희생
+prestigious, 권위있는
+excess, 과잉
+signifier, 기표
+professorship, 교수직
+skeleton, 해골
+tint, 색조
+cocoon, 고치
+sleek, 매끄러운
+establish, 설립하다
+eliminate, 제거하다
+tune, 곡조
+lecture, 강의
+ultimate, 궁극적인
+struggle, 고심하다
+manifesto, 선언서
+economics, 경제학
+hind, 암사슴
+visualisation, 심상
+battery, 배터리
+wrap, 포장하다
+uptick, 상승세
+dater, 날짜
+platform, 플랫폼
+radical, 근본적인
+inundate, 넘쳐나다
+genuine, 진실한
+blunt, 무딘
+prestige, 명성
+rear, 뒤쪽
+indirect, 간접적인
+distance, 거리
+reconstruct, 재구성하다
+oceanographer, 해양학자
+beleaguer, 포위자
+instruct, 지시하다
+folk, 사람들
+boundary, 경계
+rivet, 대갈못
+critical, 비판적인
+declare, 선언하다
+northwest, 북서
+conclude, 끝내다
+robust, 건장한
+mutate, 돌연변이를 일으키다
+particle, 입자
+anniversary, 기념일
+socialise, 사교하다
+elimination, 제거
+interpersonal, 대인관계
+various, 다양한
+original, 원래의
+previous, 이전의
+politician, 정치가
+forth, 앞으로
+transmit, 부치다
+categorise, 분류하다
+attendant, 참석자
+patch, 반점
+architecture, 건축학
+stream, 개울
+flake, 플레이크
+problematic, 문제가 있는
+patriotism, 애국심
+yawn, 따분한 사람
+fossilise, 화석화하다
+intend, 의도하다
+institution, 기관
+document, 문서
+analyst, 분석자
+spate, 큰물
+astronomical, 천문학적인
+mechanism, 기구
+interact, 상호작용하다
+evident, 분명한
+discern, 분별하다
+universe, 우주
+pesticide, 농약
+unattractive, 매력적이지 않은
+boom, 팔
+realize, 깨닫다
+irrigate, 관개하다
+variety, 다양성
+pertain, 관련된
+bloom, 꽃
+visible, 보이는
+portrait, 초상화
+collaboration, 협동
+celebration, 축하
+rebuild, 재건하다
+grin, 이를 드러내고 웃다
+eradicate, 근절하다
+matchstick, 성냥개비
+collector, 수집기
+depth, 깊이
+champagne, 샴페인
+utter, 전적인
+overseas, 해외
+submerge, 잠수하다
+scotch, 스카치
+stimulate, 자극하다
+auroral, 오로라의
+spatial, 공간적
+slam, 쾅
+application, 애플리케이션
+breadth, 폭
+complexity, 복잡성
+auditory, 귀의
+macromolecular, 고분자
+commercial, 광고
+inject, 주입하다
+merge, 병합
+mite, 매우 조그만 것
+engagement, 약혼
+proposal, 제안
+minimal, 최소한의
+visualise, 시각화하다
+fort, 요새
+overturn, 전복
+disturb, 방해하다
+compliance, 규정 준수
+unravel, 풀다
+capture, 포착
+celebrate, 축하하다
+exert, 발휘하다
+association, 협회
+fastener, 잠그는 물건
+surround, 서라운드
+manufacture, 제조
+transform, 변환
+expectation, 기대
+recovery, 회복
+pulse, 맥박
+epidemic, 감염병 유행
+stale, 탁한
+slump, 슬럼프
+consultant, 컨설턴트
+publish, 출판하다
+defensible, 방어할 수 있는
+concentrate, 집중하다
+external, 외부
+canyon, 깊은 협곡
+equation, 방정식
+upwards, 위로 향하여
+legitimate, 정당한
+neighbour, 이웃
+associate, 연관짓다
+mammal, 포유 동물
+predicament, 상태
+glean, 줍다
+tremendous, 엄청난
+database, 데이터 베이스
+biological, 생물학적
+enlarge, 크게 하다
+contain, 포함하다
+species, 종
+interpret, 해석하다
+historian, 역사가
+identical, 동일한
+exceptional, 특별한
+resident, 거주자
+manipulation, 시장 조작
+liquid, 액체
+brood, 종족
+element, 요소
+detector, 탐지기
+dominate, 빼어나게 솟다
+channel, 채널
+consonant, 자음
+interface, 인터페이스
+consume, 소비하다
+profession, 직업
+atomic, 원자
+antiquarian, 골동품 수집가
+panel, 패널
+sensitive, 예민한
+recession, 경기 후퇴
+confidence, 신뢰
+rough, 거친
+congress, 대회
+consensus, 의견 일치
+evidence, 증거
+legislation, 법률 제정
+offset, 오프셋
+rebound, 리바운드
+extreme, 극심한
+advocate, 지지하다
+conventional, 전통적인
+audience, 청중
+pollinator, 수분 매개자
+odd, 이상한
+dolphin, 돌고래
+accessible, 얻기 쉬운
+centrifuge, 원심분리기
+landowner, 지주
+emission, 방사
+advertise, 공시 하다
+employment, 고용
+vision, 비전
+mandate, 위임
+distinctive, 독특한
+downside, 단점
+delight, 기쁨
+specific, 특정한
+binary, 바이너리
+interpretation, 해석
+trade-off, 절충안
+artificial, 인공의
+outgo, 경비
+depiction, 묘사
+bargain, 매매
+script, 스크립트
+fracture, 골절
+observer, 관찰자
+spike, 스파이크
+mimic, 모방하다
+loose, 헐렁한
+realist, 현실주의자
+amend, 개정하다
+constant, 끊임없는
+negative, 부정적인
+sediment, 침전물
+unimaginative, 상상력이 없는
+unmix, 섞이지 않다
+sponsor, 스폰서
+forge, 노
+pend, 보류하다
+historic, 역사적인
+galaxy, 은하
+gasoline, 가솔린
+originate, 유래하다
+exploration, 탐구
+majority, 다수
+addition, 덧셈
+wingless, 날지 못하는
+objective, 목적
+tariff, 관세
+broadcast, 방송
+simulate, 시뮬레이션
+phrenetic, 정신이 나간
+dissatisfaction, 불만
+prescribe, 처방하다
+genome, 게놈
+undefined, 한정되지 않은
+monetary, 통화의
+automaker, 자동차 제조 업체
+alternative, 대안
+innovator, 혁신가
+quantity, 수량
+electrical, 전기 같은
+pun, 말장난
+settlement, 합의
+relevant, 관련 있는
+extensive, 광범위한
+curator, 관리자
+unpublished, 널리 알려지지 않은
+atmosphere, 대기
+assistance, 보조
+unusable, 쓸 수 없는
+represent, 대표하다
+barrier, 장벽
+generator, 발전기
+violence, 폭행
+consumer, 소비자
+irrelevant, 관련 없는
+scatter, 소수
+sunflower, 해바라기
+sparkiness, 반짝임
+nanometre, 나노미터
+combination, 콤비네이션
+toolkit, 툴킷
+hydrogen, 수소
+crustacean, 갑각류
+depict, 묘사하다
+ore, 광석
+flush, 플러시
+massive, 엄청난
+observe, 관찰하다
+coordinate, 동등 어구
+maternal, 모성
+combo, 콤보
+counterintuitive, 직관에 반하는
+vessel, 선박
+humanity, 인류
+biofuel, 바이오 연료
+formalistic, 형식주의적인
+sexton, 섹스톤
+disappear, 사라지다
+potential, 잠재적인
+boredom, 지루함
+merger, 합병
+bulk, 대부분
+stabilise, 안정시키다
+classical, 고전
+restoration, 복구
+deliver, 배달하다
+sketch, 스케치
+brainwave, 뇌파
+pseudo, 의사
+collaborative, 협력적인
+accommodate, 수용하다
+interpreter, 통역사
+automobile, 자동차
+algorithm, 연산
+nonpartisan, 초당파적이지 않은
+sustainable, 지속 가능한
+disrupt, 방해하다
+rationality, 합리성
+iceberg, 빙산
+accurate, 정확한
+responsive, 반응하는
+conversational, 이야기 잘하는
+pollution, 오염
+microphone, 마이크로폰
+migrant, 이주자
+cardiologist, 심장 전문의
+reposition, 정복
+sober, 냉철한
+unpopulated, 채워지지 않은
+vibration, 진동
+investment, 투자
+croft, 소작지
+pursuit, 추구
+deform, 추하게 하다
+inflection, 굴절
+solution, 해결책
+shockwave, 충격파
+worksheet, 워크시트
+common, 흔한
+bureau, 국
+confection, 당제
+smartphone, 스마트폰
+frustrate, 좌절시키다
+parliament, 의회
+interstellar, 성간
+wilderness, 황야
+multifaceted, 다면적인
+management, 관리
+preliminary, 예비의
+political, 정치적인
+bias, 편견
+aircraft, 항공기
+replace, 바꾸다
+justice, 정당성
+dimension, 차원
+confess, 불다
+hemisphere, 반구
+explore, 탐구하다
+dioxide, 이산화물
+habitat, 서식지
+adverse, 불리한
+radiant, 광점
+holistic, 총체적인
+aggressive, 공격적인
+investigation, 조사
+drainage, 배수
+treatable, 치료 가능
+incredible, 믿을 수 없는
+convene, 소집하다
+optimise, 최적화하다
+bounty, 하사품
+compatible, 호환 가능
+electron, 전자
