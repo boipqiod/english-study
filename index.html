@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boca Web - Premium Study</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <h1>Boca Web</h1>
+                <span class="subtitle">Premium Vocabulary</span>
+            </div>
+            <div class="controls">
+                <select id="day-select" class="control-input">
+                    <option value="all">All Days</option>
+                    <!-- Options populated by JS -->
+                </select>
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" placeholder="Search words..." class="control-input">
+                </div>
+                <select id="voice-select" class="control-input" style="min-width: 200px;">
+                    <option value="">Loading Voices...</option>
+                </select>
+                <select id="font-select" class="control-input" style="min-width: 120px;">
+                    <option value="Inter">Clean (Inter)</option>
+                    <option value="Playfair Display">Elegant (Serif)</option>
+                    <option value="Noto Sans KR">Korean (Noto)</option>
+                    <option value="system-ui">System Default</option>
+                </select>
+            </div>
+        </header>
+
+        <main id="card-grid" class="card-grid">
+            <!-- Cards populated by JS -->
+        </main>
+        
+        <footer>
+            <p>Designed for Excellence</p>
+        </footer>
+    </div>
+
+    <!-- Modal for Examples & Nuance -->
+    <div id="example-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 id="modal-word" class="modal-title">Word</h2>
+                    <p id="modal-meaning" class="modal-subtitle"></p>
+                </div>
+                <button id="modal-close" class="modal-close-btn">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div id="modal-nuance-section" class="nuance-section">
+                    <h3>💡 Nuance</h3>
+                    <div id="modal-nuance-content"></div>
+                </div>
+
+                <div class="examples-section-modal">
+                    <h3>📝 Examples</h3>
+                    <div id="modal-examples-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
