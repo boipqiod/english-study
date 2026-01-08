@@ -38,7 +38,10 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.5rem;
-    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 /* Header */
@@ -49,6 +52,21 @@ button {
     margin-bottom: 2rem;
     flex-wrap: wrap;
     gap: 1rem;
+    flex-shrink: 0;
+}
+
+/* Virtual Scroller */
+#scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    /* Hide scrollbar for cleaner look if desired, but default is fine */
+}
+
+#spacer {
+    width: 1px;
+    visibility: hidden;
 }
 
 .logo h1 {
@@ -94,6 +112,10 @@ button {
     /* Adjusted for denser layout */
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 /* Card */

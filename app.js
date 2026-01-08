@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const cardGrid = document.getElementById('card-grid');
+    const scrollContainer = document.getElementById('scroll-container');
+    const spacer = document.getElementById('spacer');
     const daySelect = document.getElementById('day-select');
     const searchInput = document.getElementById('search-input');
     const voiceSelect = document.getElementById('voice-select');
@@ -16,9 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // State
     let allWords = [];
+    let filteredWords = [];
     const WORDS_PER_DAY = 50;
     let voices = [];
-    let currentActiveCard = null;
+    let activeCardId = null;
+
+    // Virtual Scroll State
+    let itemsPerRow = 1;
+    let rowHeight = 176; // 160px card + 16px gap
+    let isVirtualScrolling = false;
+    let resizeTimeout;
+    let lastStartIndex = -1;
+    let lastEndIndex = -1;
 
     // ---------------------------------------------------------
     // 1. Initialization & Data Loading
@@ -28,7 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof VOCA_DATA !== 'undefined') {
         allWords = VOCA_DATA.sort((a, b) => parseInt(a.id) - parseInt(b.id));
         initDaySelect(allWords);
-        renderCards(allWords);
+
+        // Initial render logic
+        filteredWords = [...allWords];
+        initVirtualScroller();
+        updateVirtualScroll();
     } else {
         console.error('VOCA_DATA not found. Make sure data.js is loaded.');
     }
@@ -103,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Filter Inputs
-    daySelect.addEventListener('change', filterWords);
-    searchInput.addEventListener('input', filterWords);
+    daySelect.addEventListener('change', filterWordsFn);
+    searchInput.addEventListener('input', filterWordsFn);
 
     // Font Switcher
     fontSelect.addEventListener('change', (e) => {
@@ -117,6 +132,24 @@ document.addEventListener('DOMContentLoaded', () => {
     voiceSelect.addEventListener('change', (e) => {
         localStorage.setItem('preferredVoice', e.target.value);
     });
+
+    // Virtual Scroll Resize Listener
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            calculateDimensions();
+            updateVirtualScroll();
+        }, 100);
+    });
+
+    // Scroll Listener
+    if (scrollContainer) {
+        scrollContainer.addEventListener('scroll', () => {
+            if (isVirtualScrolling) {
+                renderVirtualSlice();
+            }
+        });
+    }
 
     // ---------------------------------------------------------
     // 3. Helper Functions
@@ -139,11 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
-    // ---------------------------------------------------------
-    // 3. Helper Functions
-    // ---------------------------------------------------------
-
     function initDaySelect(words) {
         const totalIDs = words.map(w => parseInt(w.id));
         const maxID = Math.max(...totalIDs);
@@ -157,14 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function filterWords() {
+    function filterWordsFn() {
         // Reset active card on filter change
-        currentActiveCard = null;
+        activeCardId = null;
         
         const selectedDay = daySelect.value;
         const searchTerm = searchInput.value.toLowerCase().trim();
 
-        const filtered = allWords.filter(word => {
+        filteredWords = allWords.filter(word => {
             const id = parseInt(word.id);
             // Day Filter
             let dayMatch = true;
@@ -182,7 +210,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return dayMatch && searchMatch;
         });
-        renderCards(filtered);
+
+        // Reset scroll to top when filter changes
+        if (scrollContainer) {
+            scrollContainer.scrollTop = 0;
+        }
+
+        // Force update since data changed
+        lastStartIndex = -1;
+        lastEndIndex = -1;
+        updateVirtualScroll();
     }
 
     function playAudio(text) {
@@ -230,16 +267,95 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
-    // 4. Rendering
+    // 4. Virtual Scrolling Implementation
     // ---------------------------------------------------------
+
+    function initVirtualScroller() {
+        calculateDimensions();
+        isVirtualScrolling = true;
+    }
+
+    function calculateDimensions() {
+        // We need to know how many columns are in the grid to calculate row count.
+        // The card width is minmax(180px, 1fr) with 16px gap.
+        // A simple way is to check the computed style of the grid.
+        if (!cardGrid) return;
+
+        const gridStyle = window.getComputedStyle(cardGrid);
+        const gridColumns = gridStyle.gridTemplateColumns.split(' ').length;
+        itemsPerRow = gridColumns > 0 ? gridColumns : 1;
+
+        // Row height is fixed in CSS (160px) + gap (1rem = 16px)
+        // We can measure it dynamically or hardcode it since CSS is fixed.
+        // Let's assume 176px for stability.
+        rowHeight = 176;
+    }
+
+    function updateVirtualScroll() {
+        if (!isVirtualScrolling) return;
+
+        const totalItems = filteredWords.length;
+        const totalRows = Math.ceil(totalItems / itemsPerRow);
+        const totalHeight = totalRows * rowHeight;
+
+        // Set spacer height to simulate full scrollable area
+        if (spacer) {
+            spacer.style.height = `${totalHeight}px`;
+        }
+
+        renderVirtualSlice();
+    }
+
+    function renderVirtualSlice() {
+        if (!scrollContainer || !cardGrid) return;
+
+        const scrollTop = scrollContainer.scrollTop;
+        const clientHeight = scrollContainer.clientHeight;
+
+        // Calculate visible row range
+        // Add buffer to render slightly outside view for smoother scrolling
+        const bufferRows = 2;
+
+        let startRow = Math.floor(scrollTop / rowHeight) - bufferRows;
+        if (startRow < 0) startRow = 0;
+
+        let endRow = Math.ceil((scrollTop + clientHeight) / rowHeight) + bufferRows;
+
+        const totalRows = Math.ceil(filteredWords.length / itemsPerRow);
+        if (endRow > totalRows) endRow = totalRows;
+
+        // Calculate item indices
+        const startIndex = startRow * itemsPerRow;
+        const endIndex = endRow * itemsPerRow;
+
+        // Optimization: Only render if indices changed
+        if (startIndex === lastStartIndex && endIndex === lastEndIndex) {
+            return;
+        }
+
+        lastStartIndex = startIndex;
+        lastEndIndex = endIndex;
+
+        const visibleItems = filteredWords.slice(startIndex, endIndex);
+
+        // Render these items
+        renderCards(visibleItems);
+
+        // Position the grid to match the scroll position
+        // We translate the grid down to where the startRow should start
+        const offsetY = startRow * rowHeight;
+        cardGrid.style.transform = `translateY(${offsetY}px)`;
+    }
 
     function renderCards(words) {
         cardGrid.innerHTML = '';
-        currentActiveCard = null; 
         
         words.forEach(word => {
             const card = document.createElement('div');
             card.className = 'word-card';
+            if (word.id === activeCardId) {
+                card.classList.add('active');
+            }
             
             const posHtml = word.pos 
                 ? word.pos.split(',').map(p => `<span class="pos-tag">${p.trim()}</span>`).join('') 
@@ -269,18 +385,20 @@ document.addEventListener('DOMContentLoaded', () => {
             card.addEventListener('click', (e) => {
                 if (e.target.closest('button')) return;
                 
-                if (currentActiveCard === card) {
+                if (activeCardId === word.id) {
+                    // Close active card
+                    activeCardId = null;
                     card.classList.remove('active');
-                    currentActiveCard = null;
                 } else {
-                    if (currentActiveCard) {
-                        currentActiveCard.classList.remove('active');
+                    // Open new card
+                    // If there was another active card in the DOM, close it
+                    const previousActive = cardGrid.querySelector('.word-card.active');
+                    if (previousActive) {
+                        previousActive.classList.remove('active');
                     }
-                    card.classList.add('active');
-                    currentActiveCard = card;
                     
-                    // Auto-play audio on open? (Optional, disabled for now)
-                    // playAudio(word.word); 
+                    activeCardId = word.id;
+                    card.classList.add('active');
                 }
             });
 
