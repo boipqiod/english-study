@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setupNavigation();
         setupEventListeners();
         setupHamburger();
+        setupBottomNavAutoHide();
 
         // Voice Loading (Async)
         if (speechSynthesis.onvoiceschanged !== undefined) {
@@ -118,6 +119,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     controlsPanel.classList.remove('open');
                 }
             });
+        });
+    }
+
+    // ---------------------------------------------------------
+    // BOTTOM NAV AUTO-HIDE (Mobile)
+    // ---------------------------------------------------------
+    function setupBottomNavAutoHide() {
+        const bottomNav = document.querySelector('.bottom-nav');
+        if (!bottomNav || !scrollContainer) return;
+
+        let lastScrollY = 0;
+        let hideTimeout;
+
+        scrollContainer.addEventListener('scroll', () => {
+            if (window.innerWidth > 640) return;
+
+            const currentScrollY = scrollContainer.scrollTop;
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                // Scrolling down - hide
+                bottomNav.classList.add('nav-hidden');
+            } else {
+                // Scrolling up - show
+                bottomNav.classList.remove('nav-hidden');
+            }
+            lastScrollY = currentScrollY;
+
+            // Auto-show after stopping scroll
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(() => {
+                bottomNav.classList.remove('nav-hidden');
+            }, 2000);
         });
     }
 
