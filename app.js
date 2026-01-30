@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             state.allWords = VOCA_DATA.sort((a, b) => parseInt(a.id) - parseInt(b.id));
             state.filteredWords = [...state.allWords];
             initDaySelect(state.allWords);
-            
+
             // Initialize Virtual Scroller for List View
             initVirtualScroller();
             updateVirtualScroll();
@@ -89,11 +89,36 @@ document.addEventListener('DOMContentLoaded', () => {
         loadVoices();
         setupNavigation();
         setupEventListeners();
+        setupHamburger();
 
         // Voice Loading (Async)
         if (speechSynthesis.onvoiceschanged !== undefined) {
              speechSynthesis.onvoiceschanged = loadVoices;
         }
+    }
+
+    // ---------------------------------------------------------
+    // HAMBURGER MENU (Mobile)
+    // ---------------------------------------------------------
+    function setupHamburger() {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const controlsPanel = document.getElementById('controls-panel');
+        if (!hamburgerBtn || !controlsPanel) return;
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            controlsPanel.classList.toggle('open');
+        });
+
+        // Close menu when a control is used (day select, font, voice)
+        [daySelect, fontSelect, voiceSelect].forEach(el => {
+            el.addEventListener('change', () => {
+                if (window.innerWidth <= 640) {
+                    hamburgerBtn.classList.remove('active');
+                    controlsPanel.classList.remove('open');
+                }
+            });
+        });
     }
 
     // ---------------------------------------------------------
@@ -165,14 +190,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!cardGrid || views.list.classList.contains('hidden')) return;
 
         const gridStyle = window.getComputedStyle(cardGrid);
-        
+
         // If display: none, gridTemplateColumns might not be accurate.
         // We rely on switchTab to recall this when visible.
         const gridColumns = gridStyle.gridTemplateColumns.split(' ').length;
         itemsPerRow = gridColumns > 0 ? gridColumns : 1;
 
-        // Row height is fixed in CSS (160px) + gap (1rem = 16px)
-        rowHeight = 176; 
+        // Row height: card height + gap (mobile: 130px + 8px, desktop: 160px + 16px)
+        if (window.innerWidth <= 640) {
+            rowHeight = 138; // 130px card + 8px gap
+        } else {
+            rowHeight = 176; // 160px card + 16px gap
+        }
     }
 
     function updateVirtualScroll() {
