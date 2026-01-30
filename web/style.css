@@ -466,29 +466,36 @@ button {
         to { opacity: 1; transform: translateY(0); }
     }
 
-    /* --- BOTTOM NAV: floating icon-only pills --- */
+    /* --- BOTTOM NAV: compact icon-only, auto-hide on scroll --- */
     .bottom-nav {
-        bottom: 12px;
-        padding: 0.35rem 0.6rem;
+        bottom: 10px;
+        padding: 0.3rem 0.5rem;
         gap: 0;
         width: auto;
-        max-width: 85%;
-        border-radius: 20px;
+        max-width: 80%;
+        border-radius: 18px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .bottom-nav.nav-hidden {
+        transform: translateX(-50%) translateY(80px);
+        opacity: 0;
+        pointer-events: none;
     }
 
     .nav-item {
-        padding: 0.4rem 0.7rem;
-        border-radius: 14px;
-        gap: 2px;
+        padding: 0.35rem 0.65rem;
+        border-radius: 12px;
+        gap: 0;
     }
 
     .nav-icon {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
+    /* Hide labels on mobile - icon only */
     .nav-label {
-        font-size: 0.55rem;
-        letter-spacing: -0.02em;
+        display: none;
     }
 
     /* --- CONTENT: maximize space --- */
@@ -513,9 +520,9 @@ button {
         left: 7px;
     }
 
-    /* Spacer reduced */
+    /* Spacer minimal since nav auto-hides */
     .nav-spacer {
-        height: 45px;
+        height: 20px;
     }
 
     /* --- FLASHCARD --- */
