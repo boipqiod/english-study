@@ -12,11 +12,16 @@
 <body>
     <div class="app-container">
         <header class="header">
-            <div class="logo">
-                <h1>Boca Web</h1>
-                <span class="subtitle">Premium Vocabulary</span>
+            <div class="header-top">
+                <div class="logo">
+                    <h1>Boca Web</h1>
+                    <span class="subtitle">Premium Vocabulary</span>
+                </div>
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
-            <div class="controls">
+            <div id="controls-panel" class="controls">
                 <select id="day-select" class="control-input">
                     <option value="all">All Days</option>
                     <!-- Options populated by JS -->
@@ -155,7 +160,7 @@
         </section>
         
         <!-- SPACER for Bottom Nav -->
-        <div style="height: 80px;"></div>
+        <div class="nav-spacer"></div>
 
         <!-- NEW: Bottom Navigation Bar -->
         <nav class="bottom-nav">

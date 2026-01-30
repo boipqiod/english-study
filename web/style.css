@@ -47,12 +47,51 @@ button {
 /* Header */
 .header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 2rem;
-    flex-wrap: wrap;
     gap: 1rem;
     flex-shrink: 0;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger - hidden on desktop */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    border-radius: 8px;
+    background: none;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Virtual Scroller */
@@ -87,6 +126,7 @@ button {
 .controls {
     display: flex;
     gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .control-input {
@@ -373,15 +413,208 @@ button {
 }
 
 @media (max-width: 640px) {
-    .card-grid { grid-template-columns: 1fr; }
-    .header { flex-direction: column; align-items: flex-start; }
-    .controls { width: 100%; flex-direction: column; }
-    .control-input { width: 100%; }
-    
-    .quiz-options { grid-template-columns: 1fr; } /* Stack quiz options on mobile */
-    .flashcard { height: 260px; }
-    .fc-word { font-size: 2rem; }
-    .bottom-nav { width: 90%; padding: 0.5rem; gap: 0.5rem; justify-content: space-around; }
+    /* --- APP CONTAINER: tighter padding --- */
+    .app-container {
+        padding: 0.5rem 0.75rem;
+    }
+
+    /* --- HEADER: compact with hamburger --- */
+    .header {
+        margin-bottom: 0.5rem;
+        gap: 0;
+    }
+
+    .header-top {
+        padding: 0.25rem 0;
+    }
+
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .logo .subtitle {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* Controls panel: hidden by default on mobile */
+    .controls {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem 0;
+        animation: slideDown 0.25s ease-out;
+    }
+
+    .controls.open {
+        display: flex;
+    }
+
+    .control-input {
+        width: 100%;
+        min-width: unset !important;
+        font-size: 0.85rem;
+        padding: 0.6rem 0.75rem;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- BOTTOM NAV: floating icon-only pills --- */
+    .bottom-nav {
+        bottom: 12px;
+        padding: 0.35rem 0.6rem;
+        gap: 0;
+        width: auto;
+        max-width: 85%;
+        border-radius: 20px;
+    }
+
+    .nav-item {
+        padding: 0.4rem 0.7rem;
+        border-radius: 14px;
+        gap: 2px;
+    }
+
+    .nav-icon {
+        font-size: 1.15rem;
+    }
+
+    .nav-label {
+        font-size: 0.55rem;
+        letter-spacing: -0.02em;
+    }
+
+    /* --- CONTENT: maximize space --- */
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .word-card {
+        height: 130px;
+        padding: 0.6rem;
+        border-radius: 12px;
+    }
+
+    .english-word {
+        font-size: 1.1rem;
+    }
+
+    .card-number {
+        font-size: 0.55rem;
+        top: 5px;
+        left: 7px;
+    }
+
+    /* Spacer reduced */
+    .nav-spacer {
+        height: 45px;
+    }
+
+    /* --- FLASHCARD --- */
+    .flashcard-container {
+        min-height: 50vh;
+        gap: 1.5rem;
+    }
+
+    .flashcard {
+        height: 240px;
+        max-width: 100%;
+    }
+
+    .fc-word { font-size: 1.8rem; }
+    .fc-meaning { font-size: 1.4rem; }
+    .fc-example { font-size: 0.85rem; }
+    .fc-hint { font-size: 0.65rem; }
+
+    .card-face {
+        padding: 1.2rem;
+        border-radius: 18px;
+    }
+
+    .flashcard-controls {
+        gap: 1rem;
+    }
+
+    .btn-circle {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+    }
+
+    .btn-main {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* --- QUIZ --- */
+    .quiz-container {
+        padding: 0.5rem 0;
+    }
+
+    .quiz-content {
+        padding: 1.2rem;
+        border-radius: 16px;
+    }
+
+    .quiz-question-box h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .quiz-options { grid-template-columns: 1fr; }
+
+    .btn-option {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .quiz-setup {
+        padding: 1.2rem;
+        border-radius: 16px;
+    }
+
+    .quiz-setup h2 { font-size: 1.3rem; margin-bottom: 1.2rem; }
+
+    .quiz-result {
+        padding: 1.2rem;
+        border-radius: 16px;
+    }
+
+    .quiz-result h2 { font-size: 1.5rem; }
+    .result-score { font-size: 1.8rem; }
+
+    /* --- MY NOTE --- */
+    .mynote-header {
+        margin-bottom: 1rem;
+    }
+
+    .mynote-header h2 {
+        font-size: 1.3rem;
+    }
+
+    /* --- MODAL --- */
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .modal-title {
+        font-size: 1.2rem;
+    }
+
+    /* --- FOOTER: hide on mobile --- */
+    footer {
+        display: none;
+    }
 }
 
 /* ---------------------------------------------------------
@@ -397,6 +630,12 @@ button {
 
 .view-section.active {
     display: flex; /* Changed from block to flex for List layout */
+}
+
+/* Nav Spacer */
+.nav-spacer {
+    height: 80px;
+    flex-shrink: 0;
 }
 
 /* Bottom Navigation */
